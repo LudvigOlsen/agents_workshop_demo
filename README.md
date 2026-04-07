@@ -4,9 +4,11 @@
 
 ---
 
-This repository contains a good initial project structure for working with agents such as codex and claude code. The outer layer describes the structure and the workshop tasks, while the content in `project_structure/` is ready to be copied to your own project.
+This repository contains a good initial project structure for working with agents such as Codex and Claude Code. The outer layer describes the structure and the workshop tasks, while the content in `project_structure/` is ready to be copied to your own project.
 
 See the `DEMO.md` file for steps to take to get up and running. The rest of this file describes the `project_structure/` contents.
+
+Language: The demo and a few parts of the project structure are Python-focused, but Codex could very quickly convert it to other languages. The language-agnostic parts are the `AGENTS.md` and `CLAUDE.md` documents and the `docs/*` folder and contents.
 
 ## What is here
 
@@ -74,7 +76,7 @@ project_structure/
 1. Create a fresh repo.
 2. Run `uv init`.
 3. Add development tools such as `pytest`, `ruff`, and `ty`.
-4. Copy the contents of `project_structure/` into the new repo.
+4. Copy the **contents** of `project_structure/` into the new repo.
 5. Rename `src/your_project/` and update the placeholder code and tests.
 
 The intended Python default is:
