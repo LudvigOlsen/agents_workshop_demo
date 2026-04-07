@@ -10,7 +10,7 @@ This document describes the following steps:
 
  - Installing requirements
  - Create GitHub repository
- - Initialize the python project with `uv init`
+ - Initialize the Python project with `uv init`
  - Copy in the project structure
  - Describe the project in `specs`
  - Perform deep research on science, tools, alternatives in `research`
@@ -41,7 +41,13 @@ A similar extension is available for Claude Code.
 
 ## GitHub repository
 
-You will be placing your code in a `GitHub` repository and using `git` to push code changes to it. This requires having/making a GitHub account. Then go to https://github.com/new and give your project a name and small description. In "Choose visibility", you may prefer "Private" (optional though).
+You will be placing your code in a `GitHub` repository and using `git` to push code changes to it. 
+
+This requires having/making a GitHub account. Create it now, if you need to.
+
+Then create a repository at https://github.com/new. Give your project a name and small description. In "Choose visibility", you may prefer "Private".
+
+Now, we will clone the repository down to the local disk. First replace the OWNER/REPO with your username and the name of the repository.
 
 ```bash
  gh auth login --web --git-protocol https
@@ -76,7 +82,7 @@ Now we can copy in the project structure from `project_structure/` in the worksh
  - Rename `src/your_project/` to the real package name.
  - Update `tests/test_smoke.py` to import the renamed package.
 
-Now that the core structure is ready, let's *add*, *commit* and *push* the changes to the github repository with git:
+Now that the initial project structure is ready, let's *add*, *commit* and *push* the changes to the GitHub repository with git:
 
 ```bash
 # Check the git status
@@ -93,9 +99,9 @@ git status
 
 **Tip**: Go to GitHub and see how your code is now backed up. If you make changes you don't like, you can always revert the code base to a previous commit. And if you want to do very experimental changes without destroying your main code, you can create new branches via `git switch -c new-branch-name` but this is beyond this tutorial.
 
-`git status` is quite nice for checking which files have changed since the previous commit.You can also use `git diff` to see the actual code changes.
+**Tip**: `git status` is quite nice for checking which files have changed since the previous commit. You can also use `git diff` to see the actual code changes.
 
-If you prefer not to do git in the command line, there are desktop applications for it as well. You can actually do it right here in VS Code (ask Codex or Google). Ludvig uses the `GitKraken` application.
+**Tip again**: If you prefer not to do git in the command line, there are desktop applications for it as well. You can actually do it right here in VS Code (ask Codex or Google). Ludvig uses the `GitKraken` application.
 
 ---
 
@@ -107,7 +113,7 @@ If you prefer not to do git in the command line, there are desktop applications 
 
 It's now time to describe the product you want implemented. If you just have a vague idea, you can chat with codex in the sidebar about how to make it more specific. The most important thing for working with agents is to provide **CONTEXT**. It should be as clear as possible what you want it to do. And, again, it's completely reasonable to have it generate potential specifications based on vague ideas and then iterate on them, until you have a concrete specification.
 
-Specifications are markdown (`.md`) files that goes in `docs/specs/`. In complex projects, you may want a specification per larger feature/command, but it's often fine to start with a single spec.
+Specifications are markdown (`.md`) files that go in `docs/specs/`. In complex projects, you may want a specification per larger feature/command, but it's often fine to start with a single spec.
 
 You can either choose to manually write the initial specification or to have codex generate it based on your conversation and then edit it (correct misunderstandings, add extra context and rules, etc.). This is worth spending some time on, as codex can sometimes write things in vague terms, which later makes it (or later instances of codex!) misunderstand what you actually wanted.
 
@@ -129,7 +135,7 @@ git push
 
 ## Deep research
 
-Now that you have a specification of the project, ask codex to research the main topics via web search and distill the most important knowledge into markdown reports in `docs/research/`. Specifically ask it to cite all its findings in the report, to reduce hallucinations and make it a more useful read for you. You don't technically need to read it though, it's more to give the agent more context.
+Now that you have a specification of the project, ask codex to research the main topics via web search and distill the most important knowledge into markdown reports in `docs/research/`. Specifically ask it to cite all its findings in the report, to reduce hallucinations and make it a more useful read for you. Even if you don't want to read everything, the research can be useful as context for codex. Skim it for blatant errors and otherwise just chat with codex about the findings.
 
 You can spend a few prompts on this, so it covers more ground.
 
@@ -139,7 +145,7 @@ After the research steps, talk to codex about how the specifications might be im
 Example prompt
 --------------
 
-Based on the specs, please do deep research via web search on all topics and open questions relevant for implementing and optimizng the specs. 
+Based on the specs, please do deep research via web search on all topics and open questions relevant for implementing and optimizing the specs. 
 Please distill the findings into markdown documents in docs/research/ with sources for each statement. 
 Go deep on this, so we have enough context to make optimal choices.
 ```
@@ -167,7 +173,7 @@ Once this is done, *commit* the plan. This makes it easy to `git diff` which sub
 
 Finally! It's time for you to lean back and for the agent to implement! :-)
 
-The VS Code codex extension allows queing prompts, so you can actually just set up a few "keep going" prompts while you play foosball or knit a hat or something.
+The VS Code codex extension allows queuing prompts, so you can actually just set up a few "keep going" prompts while you play foosball or knit a hat or something.
 
 ```text
 Example prompt
@@ -183,13 +189,15 @@ Keep the plan up-to-date: check off the checklist and add notes about what and h
 Keep going for a long time to get as far as possible with the plan.
 ```
 
-Then you can queue up this prompt 5 times and take a break while it builds. This "loop prompts until finished" is called Ralph loops after Ralph Wiggum. When you come back, ask it to update the plan and give you a progress report. Then check the `git diff` to see what it changed.
+Then you can queue up this prompt 5 times and take a break while it builds. This "loop prompts until finished" approach is called Ralph loops after Ralph Wiggum. **NOTE**: This requires well-defined specs and plans!
+
+When you come back, ask it to update the plan and give you a progress report. Then check the `git diff` to see what it changed.
 
 ### Run tests
 
 If you want to run the unit tests, you can do so with `uv run pytest`. If they fail, talk to codex about whether it's because there are bugs or unimplemented things in the code or because the tests are wrong. The point of tests is to find bad code. So it's not necessarily a good sign if no tests fail, as that sometimes means codex just wrote the tests to fit the implementation instead of your intentions (big difference!).
 
-**Tip**: In some projects, it might be beneficial to tell codex *never to run the tests* but only rely on mental derivation. Then **you** run the tests manually and tell it to find bugs and test flaws *mentally* based on just the failing test's name. If you give it the actual outcome, it often cheaps out and just replaces the expectations in the test instead of finding the code bugs.
+**Advanced Tip**: In some projects, it might be beneficial to tell codex *never to run the tests* but only rely on mental derivation. Then **you** run the tests manually and tell it to find bugs and test flaws *mentally* based on just the failing test's name. If you give it the actual outcome, it often cheaps out and just replaces the expectations in the test instead of finding the code bugs.
 
 ## Demo
 
@@ -198,6 +206,18 @@ You should occasionally check whether your product is on the right track.
 If you are building an app or website, have codex guide you on how to build and run it.
 
 If you are building a command line tool, check whether it runs, etc.
+
+Questions to investigate:
+
+ - Does the current result actually match the spec?
+ - What works end-to-end right now?
+ - What is still missing?
+ - What did the agent implement correctly?
+ - What did it misunderstand?
+ - If someone tried this without context, would the value be obvious?
+ - What evidence do you have that it works?
+ - Which tests or checks pass right now?
+ - What should be the next build slice after this demo?
 
 ## Feedback loop for continued building
 
