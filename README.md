@@ -1,6 +1,6 @@
 # Agentic Engineering Workshop
 
-April 10, 2026, by Ludvig Renbo Olsen, Mathilde Hartvig Diekema, and Codex.
+*April 10, 2026, by Ludvig Renbo Olsen, Mathilde Hartvig Diekema, and Codex*
 
 ---
 

@@ -1,6 +1,6 @@
 # Workshop demo
 
-April 10, 2026, by Ludvig Renbo Olsen, Mathilde Hartvig Diekema, and Codex.
+*April 10, 2026, by Ludvig Renbo Olsen, Mathilde Hartvig Diekema, and Codex*
 
 ---
 
@@ -139,7 +139,9 @@ After the research steps, talk to codex about how the specifications might be im
 Example prompt
 --------------
 
-Based on the specs, please do deep research via web search on all topics and open questions relevant for implementing and optimizng the specs. Please distill the findings into markdown documents in docs/research/ with sources for each statement. Go deep on this, so we have enough context to make optimal choices.
+Based on the specs, please do deep research via web search on all topics and open questions relevant for implementing and optimizng the specs. 
+Please distill the findings into markdown documents in docs/research/ with sources for each statement. 
+Go deep on this, so we have enough context to make optimal choices.
 ```
 
 ## Plans
@@ -152,7 +154,11 @@ Now that we know what the product should be, let's make a plan for the first bui
 Example prompt
 --------------
 
-We need a detailed plan for building the product. Please convert the specs to a plan + checklist with goals and sub goals in docs/plans/. Save it as a markdown document so we can track the progress. The steps should be so clear that you can do it without my intervention or constant review. So be very specific up-front, so I can catch any misunderstandings before you start.
+We need a detailed plan for building the product. 
+Please convert the specs to a plan + checklist with goals and sub goals in docs/plans/. 
+Save it as a markdown document so we can track the progress. 
+The steps should be so clear that you can do it without my intervention or constant review.
+So be very specific up-front, so I can catch any misunderstandings before you start.
 ```
 
 Once this is done, *commit* the plan. This makes it easy to `git diff` which sub goals it crosses off in the build phase.
@@ -167,7 +173,14 @@ The VS Code codex extension allows queing prompts, so you can actually just set 
 Example prompt
 --------------
 
-Please implement the plan one slice at a time. Everything must be based on the intention in the specs and plans. Don't drift into other ideas. The code should go in src/<project>/. Every piece of logic must be unit tested with mentally derived expectations. Tests go in tests/test_*.py. Keep the plan up-to-date: check off the checklist and add notes about what and how you solved the tasks, so future agents know exactly where we are and what to do next. Keep going for a long time to get as far as possible with the plan.
+Please implement the plan one slice at a time. 
+Everything must be based on the intention in the specs and plans. 
+Don't drift into other ideas. 
+The code should go in src/<project>/. 
+Every piece of logic must be unit tested with mentally derived expectations. 
+Tests go in tests/test_*.py. 
+Keep the plan up-to-date: check off the checklist and add notes about what and how you solved the tasks, so future agents know exactly where we are and what to do next. 
+Keep going for a long time to get as far as possible with the plan.
 ```
 
 Then you can queue up this prompt 5 times and take a break while it builds. This "loop prompts until finished" is called Ralph loops after Ralph Wiggum. When you come back, ask it to update the plan and give you a progress report. Then check the `git diff` to see what it changed.
