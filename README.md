@@ -31,6 +31,7 @@ project_structure/
 │   ├── PROMPT_EXAMPLES.md
 │   ├── TESTING.md
 │   ├── plans
+│   │   ├── HANDOVER_TEMPLATE.md
 │   │   └── README.md
 │   ├── research
 │   │   └── README.md
@@ -55,7 +56,7 @@ project_structure/
 - `docs/specs/`
   Project and feature specs. This is where larger work gets scoped before implementation.
 - `docs/plans/`
-  Execution plans, task breakdowns, status notes, and hand-over docs for ongoing work.
+  Execution plans, task breakdowns, status notes, and hand-over docs for ongoing work, including a reusable handover template.
 - `docs/research/`
   Longer research write-ups, such as paper summaries, tool comparisons, or API deep dives.
 - `docs/resources/`

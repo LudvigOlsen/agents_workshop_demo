@@ -62,17 +62,25 @@ File >> New Window >> Open Folder
 
 ## Initialize project
 
-Now that we have the project open, we will initialize it to work with the `uv` package manager and install some development dependencies:
+Now that we have the project open, we will initialize it to work with the `uv` package manager and install some development dependencies. Make sure you're on `Python 3.11+`. 
 
 ```bash
 uv init
 uv add --dev pytest ruff ty
 ```
 
+The `uv add` line updates `pyproject.toml`, which contains information about dependencies, package name and versioning, etc.
+
  - `pytest` is for testing the code. 
  - `ruff` is for formatting the code.
  - `ty` is for type checking the code.
 
+**Python path**: Add the following to `pyproject.toml` so `pytest` can find your code in `src/`:
+
+```toml
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+```
 
 ## Project structure
 
@@ -81,6 +89,8 @@ Now we can copy in the project structure from `project_structure/` in the worksh
  - Copy the **contents** of `project_structure/` into the new repository.
  - Rename `src/your_project/` to the real package name.
  - Update `tests/test_smoke.py` to import the renamed package.
+
+Have a look at the different parts in the structure. There are folders for adding specifications (what to build), plans (how and in what order to built it), research (codex searches the web and writes reports - helps make better specs and plans), and resources (articles, manuals and other documents you find relevant). There are also multiple `.md` files for guiding the agent (AGENTS.md is the main file here).
 
 Now that the initial project structure is ready, let's *add*, *commit* and *push* the changes to the GitHub repository with git:
 
@@ -189,7 +199,7 @@ Keep the plan up-to-date: check off the checklist and add notes about what and h
 Keep going for a long time to get as far as possible with the plan.
 ```
 
-Then you can queue up this prompt 5 times and take a break while it builds. This "loop prompts until finished" approach is called Ralph loops after Ralph Wiggum. **NOTE**: This requires well-defined specs and plans!
+Then you can queue up this prompt 5 times and take a break while it builds. This "loop the same prompt until finished" approach is called "Ralph loops" after Ralph Wiggum. **NOTE**: This requires well-defined specs and plans!
 
 When you come back, ask it to update the plan and give you a progress report. Then check the `git diff` to see what it changed.
 

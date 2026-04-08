@@ -38,6 +38,7 @@ Always run the linter after code changes to ensure working code.
 
 - `docs/specs/README.md`
 - `docs/plans/README.md`
+- `docs/plans/HANDOVER_TEMPLATE.md`
 - `docs/research/README.md`
 - `docs/resources/README.md`
 - `docs/TESTING.md`

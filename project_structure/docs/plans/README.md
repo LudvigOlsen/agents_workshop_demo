@@ -16,4 +16,6 @@ Keep plans tidy:
 - mark stale or abandoned plans clearly
 - remove duplicated notes when the source of truth lives elsewhere
 
+Start from `HANDOVER_TEMPLATE.md` when unfinished work needs to be resumed by someone else later.
+
 The goal is to make ongoing work easy to resume later, by either a human or an agent.
