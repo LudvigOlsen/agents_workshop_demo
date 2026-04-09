@@ -8,7 +8,7 @@ Let's build some ambitious projects!!
 
 This document describes the following steps:
 
- - Installing requirements
+ - Install requirements
  - Create GitHub repository
  - Initialize the Python project with `uv init`
  - Copy in the project structure
@@ -39,13 +39,13 @@ VS Code and Codex extension:
 
 A similar extension is available for Claude Code.
 
-## GitHub repository
+## Create GitHub repository
 
 You will be placing your code in a `GitHub` repository and using `git` to push code changes to it. 
 
 This requires having/making a GitHub account. Create it now, if you need to.
 
-Then create a repository at https://github.com/new. Give your project a name and small description. In "Choose visibility", you may prefer "Private".
+Then **create a repository** at https://github.com/new. Give your project a name and small description. In "Choose visibility", you may prefer "Private".
 
 Now, we will clone the repository down to the local disk. First replace the OWNER/REPO with your username and the name of the repository.
 
