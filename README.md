@@ -1,4 +1,4 @@
-# Agentic Engineering Workshop <img src='agentic_workshop_logo_450x459.png' align="right" height="300" /></a>
+# Agentic Engineering Workshop <img src='agentic_workshop_logo_450x459.png' align="right" height="250" /></a>
 
 *April 10, 2026, by Ludvig Renbo Olsen, Mathilde Hartvig Diekema, and Codex*
 
