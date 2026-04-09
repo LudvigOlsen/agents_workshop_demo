@@ -5,11 +5,14 @@
 ---
 
 <img src='agentic_workshop_logo_450x459.png' align="right" height="275" />
+
 This repository contains a good initial project structure for working with agents such as Codex and Claude Code. The outer layer describes the structure and the workshop tasks, while the content in `project_structure/` is ready to be copied to your own project. 
 
-See the `DEMO.md` file for steps to take to get up and running. The rest of this file describes the `project_structure/` contents.
+**Tutorial**: See the `DEMO.md` file for how to take to get up and running with agentic engineering!
 
-Language: The demo and a few parts of the project structure are Python-focused, but Codex could very quickly convert it to other languages. The language-agnostic parts are the `AGENTS.md` and `CLAUDE.md` documents and the `docs/*` folder and contents.
+**Language**: The demo and parts of the project structure are Python-focused, but Codex could very quickly convert it to other languages. The language-agnostic parts are the `AGENTS.md` and `CLAUDE.md` documents and the `docs/*` folder and contents.
+
+The rest of this file describes the `project_structure/` contents.
 
 ## What is here
 
