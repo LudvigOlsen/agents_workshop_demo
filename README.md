@@ -1,12 +1,10 @@
-# Agentic Engineering Workshop <img src='agentic_workshop_logo_450x459.png' align="right" height="250" /></a>
+# Agentic Engineering Workshop
 
 *April 10, 2026, by Ludvig Renbo Olsen, Mathilde Hartvig Diekema, and Codex*
 
 ---
 
-
-
-This repository contains a good initial project structure for working with agents such as Codex and Claude Code. The outer layer describes the structure and the workshop tasks, while the content in `project_structure/` is ready to be copied to your own project.
+This repository contains a good initial project structure for working with agents such as Codex and Claude Code. The outer layer describes the structure and the workshop tasks, while the content in `project_structure/` is ready to be copied to your own project. <img src='agentic_workshop_logo_450x459.png' align="right" height="250" />
 
 See the `DEMO.md` file for steps to take to get up and running. The rest of this file describes the `project_structure/` contents.
 
